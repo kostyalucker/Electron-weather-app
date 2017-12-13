@@ -9,7 +9,7 @@ let mainWindow;
 // Если приложение готово к запуску
 app.on('ready', function(){
     // Добавляем окно
-    mainWindow = new BrowserWindow({width: 350, height: 500, resizable:false , frame: false });
+    mainWindow = new BrowserWindow({width: 350, height: 500 });
 
     // resizable: false
     mainWindow.loadURL('file://' + __dirname + '/index.html')

@@ -164,12 +164,26 @@
 
     $(document).ready(function () {
 
+        var cityArr = {data:[]};
+        $.getJSON("all-cities.json", function (json) {
+            console.log(json[0].name);
+            for (var i = 0; i < 4; i++) {
+                cityArr.data.push(json[i].name);
+            }
+            console.log(cityArr.data)
+
+        }).done(function () {
+            $('#citySearch').easyAutocomplete(cityArr);
+            console.log(cityArr.data)
+        })
+
 
         var dataCity = {
             data : ['Samara', 'Moscow', 'Saint Petersburg']
         }
 
-        $('#citySearch').easyAutocomplete(dataCity);
+//        $('#citySearch').easyAutocomplete(dataCity);
+
 
 
         $('.close').on('click', function () {
@@ -278,6 +292,7 @@
                 } else if (data.weather[0].main === "Snow") {
                     $('.app-data-clouds').html('Снег');
                     $('.app').addClass('snow');
+                    $('#canvas').fadeIn();
                 } else {
                     $('.app-data-clouds').html(data.weather[0].main)
                 }
