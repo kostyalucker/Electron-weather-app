@@ -1,15 +1,19 @@
 {
-  "name": "testapp",
+  "name": "Electron-weather",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager . myApp --platform=win32 --arch=x64 --version=0.33.3 --app-version=0.1.0 --out=dist --ignore=dist --prune --icon=build/icon.ico"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "electron": "^1.7.9",
     "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^10.1.0"
   }
 }
