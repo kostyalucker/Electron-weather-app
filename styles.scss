@@ -33,25 +33,31 @@ $loading-width: 150px;
 
 .rain {
   transition: 2s all ease-in-out;
-  background: lightblue;
+  background: linear-gradient(to top, #51b2ee, whitesmoke);;
   animation: slide-from-left 3s cubic-bezier(0, 0, 0, 1) forwards;
 }
 
 .clouds {
   transition: 3s all ease-in-out;
-  background: lemonchiffon;
+  background: linear-gradient(to top, #999999, #dddddd);;
+  animation: slide-from-left 3s cubic-bezier(0, 0, 0, 1) forwards;
+}
+
+.clear {
+  transition: 3s all ease-in-out;
+  background: linear-gradient(to top, #ffb725, #a9dd7a);;
   animation: slide-from-left 3s cubic-bezier(0, 0, 0, 1) forwards;
 }
 
 .snow {
   transition: 2s all ease-in-out;
-  background: white;
+  background: linear-gradient(to left, #6f6f6f, whitesmoke);
   animation: slide-from-left 3s cubic-bezier(0, 0, 0, 1) forwards;
 }
 
 .mist {
   transition: 2s all ease-in-out;
-  background: lightgreen;
+  background: linear-gradient(to top, lightgreen, whitesmoke);;
   animation: slide-from-left 3s cubic-bezier(0, 0, 0, 1) forwards;
   .app-city {
     color: #333333;
@@ -186,16 +192,26 @@ $loading-width: 150px;
 
       }
     }
+
     .app-search {
       z-index:10;
-      margin-top: 35px;
+      margin-top: 45px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
       .easy-autocomplete {
+
+        width: auto !important;
         position: relative;
         .easy-autocomplete-container {
           position: absolute;
-          top: 40px;
-          background: #fff;
+          top:43px;
           width: 100%;
+          max-height: 300px;
+
+          background: #fff;
+          overflow-y: scroll;
           z-index: 3;
           li {
             padding: 10px;
