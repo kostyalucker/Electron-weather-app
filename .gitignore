@@ -1,4 +1,6 @@
 $ cat .gitignore
 *.idea
 node_modules
+build
 dist
+*scss
